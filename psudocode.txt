@@ -15,4 +15,4 @@ attributs:
 methods:
 *play_game runs a while loop until there is a winner
 *display_state displays the current state of the board
-*check_for_winner 
+*check_for_winner given the state of players, checks to see if there is a winner
