@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "rdbg",
+            "name": "Debug current file with rdbg",
+            "request": "launch",
+            "script": "${file}",
+            "args": [],
+            "askParameters": false,
+            "useBundler": false
+        },
+        {
+            "type": "rdbg",
+            "name": "Debug main.rb with rdbg",
+            "request": "launch",
+            "script": "${workspaceFolder}/main.rb",
+            "args": [],
+            "askParameters": false,
+            "useBundler": false
+        },
+        {
+            "type": "rdbg",
+            "name": "Attach rdbg",
+            "request": "attach"
+        }
+    ]
+}
