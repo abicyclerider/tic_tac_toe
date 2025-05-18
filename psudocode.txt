@@ -1,0 +1,18 @@
+::Player
+attributes: 
+*A list of positions filled by the player represented as numbers 1-9 filling
+positions like the numbers on the num section of a keyboard
+*Marker symbol to use when displaying the game state
+
+methods:
+*take_turn prompts the user to enter a valid choice for the next spot to fill. 
+Takes as an argument the other player object to be able to check for valid positions  
+
+::Game
+attributs: 
+*A list of players in the game
+
+methods:
+*play_game runs a while loop until there is a winner
+*display_state displays the current state of the board
+*check_for_winner 
