@@ -1,20 +1,23 @@
-require_relative 'mixins/chech_subset' 
+# frozen_string_literal: true
+
+require_relative 'mixins/chech_subset'
 
 class Player
   include CheckSubset
 
   WINNING_COMBINATIONS = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-  [1, 4, 7],
-  [2, 5, 6],
-  [3, 6, 9],
-  [1, 5, 9],
-  [7, 5, 3]
-  ]
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [1, 4, 7],
+    [2, 5, 6],
+    [3, 6, 9],
+    [1, 5, 9],
+    [7, 5, 3]
+  ].freeze
 
   attr_reader :positions, :symbol
+
   def initialize(symbol)
     @symbol = symbol
     @positions = []

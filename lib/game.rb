@@ -1,10 +1,10 @@
+# frozen_string_literal: true
 
-require_relative './player.rb'
-require_relative './board.rb'
+require_relative './player'
+require_relative './board'
 
 class Game
-  POSITIONS = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-
+  POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9].freeze
 
   def initialize
     @player_x = Player.new('X')
@@ -13,7 +13,7 @@ class Game
   end
 
   def play_round
-    while true   
+    loop do
       if @player_x.take_turn(POSITIONS - @player_x.positions - @player_o.positions)
         puts "Player #{@player_x.symbol} wins!!"
         @board.display(@player_x, @player_o)
@@ -21,7 +21,7 @@ class Game
       else
         @board.display(@player_x, @player_o)
       end
-      
+
       if @player_o.take_turn(POSITIONS - @player_x.positions - @player_o.positions)
         puts "Player #{@player_o.symbol} wins!!"
         @board.display(@player_x, @player_o)
@@ -29,7 +29,6 @@ class Game
       else
         @board.display(@player_x, @player_o)
       end
-      
     end
   end
 end

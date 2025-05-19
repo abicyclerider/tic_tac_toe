@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CheckSubset
   def check_subset?(list_1, list_2)
     list_2.all? { |element| list_1.include?(element) }
