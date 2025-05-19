@@ -13,8 +13,23 @@ class Game
   end
 
   def play_round
-    @player_x.take_turn(POSITIONS - @player_x.positions - @player_o.positions)
-    @player_o.take_turn(POSITIONS - @player_x.positions - @player_o.positions)
-    @board.display(@player_x, @player_o)
+    while true   
+      if @player_x.take_turn(POSITIONS - @player_x.positions - @player_o.positions)
+        puts "Player #{@player_x.symbol} wins!!"
+        @board.display(@player_x, @player_o)
+        break
+      else
+        @board.display(@player_x, @player_o)
+      end
+      
+      if @player_o.take_turn(POSITIONS - @player_x.positions - @player_o.positions)
+        puts "Player #{@player_o.symbol} wins!!"
+        @board.display(@player_x, @player_o)
+        break
+      else
+        @board.display(@player_x, @player_o)
+      end
+      
+    end
   end
 end
