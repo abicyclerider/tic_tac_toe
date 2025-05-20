@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
+# Module for doing set operations
 module CheckSubset
-  def check_subset?(list_1, list_2)
-    list_2.all? { |element| list_1.include?(element) }
+  def check_subset?(list1, list2)
+    list2.all? { |element| list1.include?(element) }
   end
 
   def check_subsets?(list, list_of_lists)

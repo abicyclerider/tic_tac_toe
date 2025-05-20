@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Board class represents the board in a game of tic-tac-toe
 class Board
   POSITION_TO_INDEX = {
     1 => 49, # Bottom left
