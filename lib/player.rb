@@ -32,6 +32,14 @@ class Player
     winner
   end
 
+  def check_tie?(other_player)
+    tie = (@positions + other_player.positions).length == POSITIONS.length
+    return unless tie
+
+    puts "It's a tie!"
+    tie
+  end
+
   def take_turn?(board, other_player)
     user_choice = 0
     available_positions = POSITIONS - other_player.positions - @positions
@@ -42,6 +50,6 @@ class Player
     end
     @positions.push(user_choice)
     board.display(self, other_player)
-    check_winner?
+    check_winner? || check_tie?(other_player)
   end
 end
