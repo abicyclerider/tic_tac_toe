@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'mixins/chech_subset'
+require_relative 'mixins/check_subset'
 # Player class represents a player in a game of tic-tac-toe
 class Player
   include CheckSubset
@@ -11,7 +11,7 @@ class Player
     [4, 5, 6],
     [7, 8, 9],
     [1, 4, 7],
-    [2, 5, 6],
+    [2, 5, 8],
     [3, 6, 9],
     [1, 5, 9],
     [7, 5, 3]
@@ -25,7 +25,7 @@ class Player
   end
 
   def check_winner?
-    winner = check_subsets?(@positions, WINNING_COMBINATIONS)
+    winner = any_subset_in_list?(@positions, WINNING_COMBINATIONS)
     return unless winner
 
     puts "Player #{@symbol} wins!!"

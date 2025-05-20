@@ -6,7 +6,7 @@ module CheckSubset
     list2.all? { |element| list1.include?(element) }
   end
 
-  def check_subsets?(list, list_of_lists)
+  def any_subset_in_list?(list, list_of_lists)
     list_of_lists.any? { |list_element| check_subset?(list, list_element) }
   end
 end
